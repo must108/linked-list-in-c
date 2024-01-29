@@ -7,6 +7,7 @@ typedef struct Node {
     struct Node *prev, *next;
 } Node;
 
+// creates a node
 Node* createNode(int data){
     Node* temp = malloc(sizeof(Node));
     temp->data = data;
@@ -16,6 +17,7 @@ Node* createNode(int data){
     return temp;
 }
 
+// inserts node at beginning
 Node* insertBeginning(Node* head, int data){
     Node* temp = createNode(data);
 
@@ -30,6 +32,7 @@ Node* insertBeginning(Node* head, int data){
     return head;
 }
 
+// inserts node at end
 Node* insertEnd(Node* head, int data){
     Node* temp = createNode(data);
 
@@ -50,6 +53,7 @@ Node* insertEnd(Node* head, int data){
     return head;
 }
 
+// inserts node at a specific index
 Node* insertPlace(Node* head, int data, int place){
     Node* temp = createNode(data);
 
@@ -76,6 +80,7 @@ Node* insertPlace(Node* head, int data, int place){
     return head;
 }
 
+// deletes node
 Node* deleteItem(Node* head, int data){
     Node* temp;
 
@@ -107,6 +112,7 @@ Node* deleteItem(Node* head, int data){
     return head;
 }
 
+// searches for node given its value
 void searchItem(Node* head, int data){
     if(head == NULL){
         printf("Item not found\n");
@@ -126,6 +132,7 @@ void searchItem(Node* head, int data){
     }
 }
 
+// displays list
 void displayList(Node* head){
     Node* show = head;
 
@@ -137,6 +144,7 @@ void displayList(Node* head){
     printf("\n\n");
 }
 
+// displays list in reverse (to show functionality of a doubly linked list)
 void displayListReverse(Node* head){
     Node* show = head;
 
@@ -152,6 +160,7 @@ void displayListReverse(Node* head){
     printf("\n\n");
 }
 
+// frees list
 void freeList(Node* head){
     Node* current = head;
     Node* next;

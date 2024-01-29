@@ -7,6 +7,7 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
+// creates node
 Node* createNode(int data){
     Node* temp = malloc(sizeof(Node));
     temp->data = data;
@@ -15,6 +16,7 @@ Node* createNode(int data){
     return temp;
 }
 
+// inserts node at beginning 
 Node* insertBeginning(Node* head, int data){
     Node* temp = createNode(data);
 
@@ -35,6 +37,7 @@ Node* insertBeginning(Node* head, int data){
     return head;
 }
 
+// inserts node at end
 Node* insertEnd(Node* head, int data){
     Node* temp = createNode(data);
 
@@ -54,6 +57,7 @@ Node* insertEnd(Node* head, int data){
     return head;
 }
 
+// inserts node at specified place
 Node* insertPlace(Node* head, int data, int place){
     Node* temp = createNode(data);
 
@@ -76,6 +80,7 @@ Node* insertPlace(Node* head, int data, int place){
     return head;
 }
 
+// deletes node with a specified value
 Node* deleteItem(Node* head, int data){
     Node* temp;
     Node* last;
@@ -122,6 +127,7 @@ Node* deleteItem(Node* head, int data){
     return head;
 }
 
+// searches for a node given a value
 void searchItem(Node* head, int data){
     if(head == NULL){
         printf("Item not found\n");
@@ -140,6 +146,7 @@ void searchItem(Node* head, int data){
     }
 }
 
+// displays list
 void displayList(Node* head){
     Node* show = head;
 
@@ -151,6 +158,7 @@ void displayList(Node* head){
     printf("\n\n");
 }
 
+// frees list
 void freeList(Node* head){
     Node* current = head->next;
     Node* next;
@@ -164,6 +172,7 @@ void freeList(Node* head){
     free(head);
 }
 
+// gets length of list
 int listLength(Node* head){
     Node* walker = head;
     int count = 1;
@@ -176,6 +185,7 @@ int listLength(Node* head){
     return count;
 }
 
+// prints list twice (to show functionality of circular linked list)
 void printTwice(Node* head){
     Node* show = head;
     int len = listLength(head);
