@@ -191,7 +191,6 @@ void printTwice(Node* head){
     int len = listLength(head);
     int count = 0;
 
-    printf("%d\n", len);
     do {
         printf("%d ", show->data);
         show = show->next;
