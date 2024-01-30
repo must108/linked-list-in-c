@@ -124,6 +124,7 @@ Node* deleteItem(Node* head, int data){
         temp = head;
         last->next = temp->next;
         temp->next->prev = last;
+        head = temp->next;
         free(temp);
         return head;
     }

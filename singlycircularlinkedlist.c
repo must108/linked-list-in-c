@@ -112,6 +112,7 @@ Node* deleteItem(Node* head, int data){
 
         temp = head;
         last->next = temp->next;
+        head = temp->next;
         free(temp);
         return head;
     }
